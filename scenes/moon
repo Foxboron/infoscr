@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -s -4 wttr.in/moon | head -n -2 

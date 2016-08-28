@@ -1,0 +1,5 @@
+INFOSCR
+=======
+  
+  
+Simple ascii infoscreen!  
