@@ -19,12 +19,14 @@ def print_characters(TIME, output):
 def play_scenes(settings):
     while True:
         req = requests.get(IP+"/scene")
+        print(req.text)
         print_characters(settings["character_time"], req.json()["text"])
         time.sleep(settings["pause_time"])
 
 
 def main(IP):
     req = requests.get(IP+"/settings")
+    print(req.json())
     play_scenes(req.json())
 
 
