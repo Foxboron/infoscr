@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import subprocess
 import sys
 import time
@@ -18,15 +19,13 @@ def print_characters(TIME, output):
 
 def play_scenes(settings):
     while True:
-        req = requests.get(IP+"/scene")
-        print(req.text)
+        req = requests.get(IP+"/scene", headers={"Session": settings["id"]})
         print_characters(settings["character_time"], req.json()["text"])
         time.sleep(settings["pause_time"])
 
 
 def main(IP):
     req = requests.get(IP+"/settings")
-    print(req.json())
     play_scenes(req.json())
 
 

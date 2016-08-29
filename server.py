@@ -86,7 +86,6 @@ def get_scenes():
 @app.route('/scene/', methods=['GET'])
 @Token
 def get_next_scene(state):
-    print(state)
     ret = state["state"].popleft()
     ret["id"] = state["id"]
     return jsonify(ret)
