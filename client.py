@@ -6,9 +6,6 @@ import requests
 from os import listdir
 
 
-DIR = "./scenes/"
-
-
 def print_characters(TIME, output):
     for letter in output:
         print(letter, end="", flush=True)
